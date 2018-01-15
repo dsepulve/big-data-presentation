@@ -1,5 +1,5 @@
 ## Introducción al BigData
-
+**Diego Sepúlveda**
 ---
 
 ### Motivación
@@ -15,43 +15,39 @@ _"El Big Data significa que un conjunto de datos es muy grande para procesarse o
 
 ---
 
-## ¿Cómo podemos identificar un sistema de Big Data?
+### ¿Cómo podemos identificar un sistema de Big Data?
 
 En 2001, Doug Laney de Gartner presentó lo que se conoce como las _"tres V de Big Data"_ para describir algunas características que hacen que los sistemas de big data sean diferentes de otros procesos de datos:
 
 ---
 
-## Volumen
+### Volumen
 Estos conjuntos de datos pueden estar en órdenes de magnitud mayores que los conjuntos de datos tradicionales, lo que exige más reflexión en cada etapa del ciclo de vida de procesamiento y almacenamiento.
 A menudo, debido a que los requisitos de trabajo superan las capacidades de una sola máquina, esto se convierte en un desafío para agrupar, asignar y coordinar recursos de grupos de máquinas. La gestión de clusters y los algoritmos capaces de dividir las tareas en piezas más pequeñas cobran cada vez más importancia.
 
 ---
 
-## Velocidad
-Otra forma en que los sistemas de Big Data difieren de otros sistemas de datos es la velocidad con la que la información se mueve a través del sistema. Con frecuencia, los datos fluyen al sistema desde múltiples fuentes y, a menudo, se espera que sean procesados ​​en tiempo real para obtener información y actualizar la comprensión actual del sistema.
-
-En este enfoque la retroalimentación casi instantánea ha alejado a muchos profesionales de Big Data de un enfoque orientado a batch y más cerca de un sistema de transmisión en tiempo real (online). Los datos se analizan constantemente para mantenerse al día con la afluencia de nueva información y difundir resultados valiosos desde el principio. Estas ideas requieren sistemas robustos con componentes altamente disponibles para protegerse contra fallas a lo largo de la cadena de datos.
+### Velocidad
+A menudo, se espera que los datos sean procesados ​​en tiempo real para obtener información del sistema. En este enfoque la retroalimentación es casi instantánea. Los datos se analizan constantemente para mantenerse al día con la afluencia de nueva información y dar resultados valiosos desde el principio. Estas estrategias requieren sistemas robustos con componentes altamente disponibles para protegerse contra fallas a lo largo de la cadena de datos.
 
 ---
 
-## Variedad
-Los problemas de Big Data suelen ser únicos debido a la amplia gama de fuentes que se procesan y su calidad relativa.
-
-Los datos pueden ser subministrados desde sistemas internos o externos (redes sociales), desde sensores de dispositivos físicos y desde otros proveedores. Big Data busca manejar datos potencialmente útiles independiente de dónde provengan al consolidar toda la información en un solo sistema. Mientras que los sistemas más tradicionales suelen esperar que los datos ingresen etiquetados, formateados y organizados, los sistemas de big data usualmente almacenan datos más cercanos a su estado bruto. Idealmente, cualquier transformación o cambio en los datos brutos ocurrirá en la memoria en el momento del procesamiento.
+### Variedad
+Los datos pueden ser subministrados desde diversas fuentes, tanto internos o externos. El Big Data busca manejar datos **potencialmente útiles** independiente de dónde provengan al consolidar. Mientras los sistemas más tradicionales suelen esperar que los datos ingresen formateados y organizados, el Big Data **usualmente** almacena datos más cercanos a su estado original. Idealmente, cualquier transformación o cambio en los datos brutos ocurrirá en la memoria en el momento del procesamiento.
 
 ---
-## Otras características
-Varias personas y organizaciones han sugerido ampliar las tres V originales, aunque estas propuestas han tendido a describir los desafíos en lugar de las cualidades de los macrodatos. Algunas adiciones comunes son:
+### Otras características
+Además de las tres _V originales_, se han descrito algunas cualidades adiciones:
 
-- **Veracidad**: la variedad de fuentes y la complejidad del procesamiento pueden generar desafíos para evaluar la calidad de los datos (y, en consecuencia, la calidad del análisis resultante).
+- **Veracidad**: la variedad de fuentes y la complejidad del procesamiento pueden generar desafíos para evaluar la validéz de los datos.
 
-- **Variabilidad**: la variación en los datos conduce a una gran variación en la calidad. Es posible que se necesiten recursos adicionales para identificar, procesar o filtrar datos de baja calidad para hacerlo más útil.
+- **Variabilidad**: es posible que se necesiten recursos adicionales para identificar, procesar o filtrar datos de baja calidad para hacerlo más útil.
 
-- **Valor**: el desafío principal de big data es entregar valor. Algunas veces, los sistemas y procesos establecidos son lo suficientemente complejos como para que el uso de los datos y la extracción del valor real se vuelvan difíciles.
+- **Valor**: los sistemas y procesos establecidos son lo suficientemente complejos como para que el uso de los datos y la extracción del valor real se vuelvan difíciles.
 
 ---
 
-## ¿Cómo se vería un ciclo de vida en Big Data?
+### ¿Cómo se vería un ciclo de vida en Big Data?
 Las categorías generales para el procesamiento de Big Data son:
  1. Ingesta de datos en el sistema
  2. Persistencia de datos
@@ -59,7 +55,7 @@ Las categorías generales para el procesamiento de Big Data son:
  4. Visualización de resultados 
 
 ---
-## Clustered Computing (_Primero revisaremos esto_)
+### Clustered Computing (_Primero revisaremos esto_)
 
 Para poder cumplir con los requerimientos y exigencias de un sistema de Big Data, es necesario tener presente que una sola máquina física no es capáz de cumplir con la demanda requerida, es por ello que las herramientas usadas para el tratamiento de datos a niveles masivos, estan pensadas en el uso distribuido de los recursos. Algunos conceptos que debemos tener presentes en esta parte son:
 
@@ -68,7 +64,7 @@ Para poder cumplir con los requerimientos y exigencias de un sistema de Big Data
 - **Escalabilidad**: los clústeres facilitan la escala horizontal al agregar máquinas adicionales al grupo. Esto significa que el sistema puede reaccionar a los cambios en los requisitos de recursos sin expandir los recursos físicos en una máquina.
 
 ---
-## Ingesta de datos
+### Ingesta de datos
 
 La ingesta de datos es el proceso de tomar datos sin procesar y agregarlos al sistema. La complejidad de esta operación depende en gran medida del formato y la calidad de las fuentes de datos y de cuán lejos están los datos del estado deseado antes del procesamiento.
 
@@ -78,7 +74,7 @@ Durante el proceso de ingestión, suele tener lugar cierto nivel de análisis, c
 
 ---
 
-## Persistencia de datos
+### Persistencia de datos
 
 Los procesos de ingestión normalmente entregan los datos a los componentes que administran el almacenamiento, de modo que se pueden conservar de manera confiable en el disco. Si bien parece que sería una operación simple, el volumen de datos entrantes, los requisitos de disponibilidad y la capa de computación distribuida hacen que sea necesario contar con sistemas de almacenamiento más complejos.
 
@@ -88,7 +84,7 @@ Los datos también se pueden importar a otros sistemas distribuidos para un acce
 
 ---
 
-## Análisis de Datos
+### Análisis de Datos
 Una vez que los datos están disponibles, el sistema puede comenzar a procesar los datos para conocer la información real. La capa de cálculo es quizás la parte más diversa del sistema, ya que los requisitos y el mejor enfoque pueden variar significativamente según el tipo de conocimiento que se desee. A menudo, los datos se procesan de manera repetida, ya sea iterativamente con una sola herramienta o mediante el uso de varias herramientas para mostrar diferentes tipos de información.
 
 El procesamiento por lotes es un método de computación en un gran conjunto de datos. El proceso implica dividir el trabajo en partes más pequeñas, programar cada pieza en una máquina individual, reorganizar los datos en función de los resultados intermedios y luego calcular y ensamblar el resultado final. Estos pasos a menudo se denominan individualmente como división, mapeo, mezcla, reducción y ensamblaje, o colectivamente como un algoritmo de reducción de mapas distribuidos. Esta es la estrategia utilizada por MapReduce de Apache Hadoop. El procesamiento por lotes es más útil cuando se trata de conjuntos de datos muy grandes que requieren un poco de computación.
@@ -101,7 +97,7 @@ Los ejemplos anteriores representan marcos computacionales. Sin embargo, hay muc
 
 ---
 
-## Visualizando los Resultados
+### Visualizando los Resultados
 
 Debido al tipo de información que se procesa en los sistemas de big data, reconocer las tendencias o los cambios en los datos a lo largo del tiempo a menudo es más importante que los valores mismos. La visualización de datos es una de las formas más útiles de detectar tendencias y dar sentido a una gran cantidad de puntos de datos.
 
@@ -113,53 +109,55 @@ Otra tecnología de visualización típicamente utilizada para el trabajo intera
 
 ---
 
-# Anexo
+## Anexo
 
 ---
 
-## Glosario
+### Glosario
 
 - **Big Data**: Big Data es un término general para conjuntos de datos que las computadoras o herramientas tradicionales no pueden manejar razonablemente debido a su volumen, velocidad y variedad. Este término también se aplica típicamente a las tecnologías y estrategias para trabajar con este tipo de datos.
 
 ---
-
+### Glosario
 - **Batch Processing**: el procesamiento por lotes es una estrategia informática que implica procesar datos en conjuntos grandes. Esto es ideal para trabajos que no requieren mucho tiempo y que operan en grandes conjuntos de datos. El proceso se inicia y en un momento posterior, el sistema devuelve los resultados.
 
 ---
-
+### Glosario
 - **Data lake**: Data lake es un término para un gran repositorio de datos recopilados en un estado relativamente crudo. Esto se usa con frecuencia para referirse a los datos recopilados en un sistema de big data que podría no estar estructurado y cambiar con frecuencia. Esto difiere en espíritu de los almacenes de datos (definidos a continuación).
 
 ---
-
+### Glosario
 - **Data Mining**: la minería de datos es un término amplio para la práctica de tratar de encontrar patrones en grandes conjuntos de datos. Es el proceso de tratar de refinar una gran cantidad de datos en un conjunto de información más comprensible y coherente.
 
 ---
-
+### Glosario
 - **Data Warehouse**: los almacenes de datos son depósitos de datos grandes y ordenados que se pueden usar para análisis e informes. A diferencia de un lago de datos, un almacén de datos se compone de datos que se han limpiado, integrado con otras fuentes y, en general, está bien ordenado. A menudo se habla de almacenes de datos en relación con big data, pero normalmente son componentes de sistemas más convencionales.
 
 ---
-
+### Glosario
 - **ETL**: ETL significa extraer, transformar y cargar. Se refiere al proceso de tomar datos en bruto y prepararlos para el uso del sistema. Tradicionalmente, este es un proceso asociado a los almacenes de datos, pero las características de este proceso también se encuentran en las tuberías de ingestión de los sistemas de big data.
 
 ---
-
+### Glosario
 - **Hadoop**: Hadoop es un proyecto de Apache que fue el éxito inicial de código abierto en big data. Consiste en un sistema de archivos distribuido llamado HDFS, con una administración de clúster y un programador de recursos en la parte superior llamado YARN (Sin embargo, otro negociador de recursos). Las capacidades de procesamiento por lotes son proporcionadas por el motor de cálculo MapReduce. Se pueden ejecutar otros sistemas computacionales y de análisis junto con MapReduce en las implementaciones modernas de Hadoop.
 
+---
+### Glosario
 - **In-memory Computing**: la computación en memoria es una estrategia que implica mover los conjuntos de datos en funcionamiento por completo dentro de la memoria colectiva de un clúster. Los cálculos intermedios no se escriben en el disco y se guardan en la memoria. Esto le da a los sistemas de cómputo en memoria como Apache Spark una gran ventaja en la velocidad sobre los sistemas de E / S vinculados como MapReduce de Hadoop.
 
 ---
-
+### Glosario
 - **Machine Learning**: el aprendizaje automático es el estudio y la práctica de diseñar sistemas que pueden aprender, ajustar y mejorar en función de los datos que se les proporcionan. Esto generalmente implica la implementación de algoritmos predictivos y estadísticos que pueden concentrarse continuamente en el comportamiento y las percepciones "correctas" a medida que fluyen más datos a través del sistema.
 
 ---
-
+### Glosario
 - **Map reduce** : Map reduce (el algoritmo de big data, no el motor de cálculo MapReduce de Hadoop) es un algoritmo para programar el trabajo en un clúster de computación. El proceso implica dividir la configuración del problema (asignarla a diferentes nodos) y calcular sobre ellos para producir resultados intermedios, mezclando los resultados para alinear conjuntos similares, y luego reduciendo los resultados al generar un único valor para cada conjunto.
 
 ---
-
+### Glosario
 - **NoSQL**: NoSQL es un término amplio que se refiere a bases de datos diseñadas fuera del modelo relacional tradicional. Las bases de datos NoSQL tienen diferentes ventajas y desventajas en comparación con las bases de datos relacionales, pero a menudo son muy adecuadas para los sistemas de big data debido a su flexibilidad y su arquitectura de distribución frecuente.
 
 ---
-
+### Glosario
 - **Stream Processing**: El procesamiento de flujo es la práctica de computar sobre elementos de datos individuales a medida que se mueven a través de un sistema. Esto permite el análisis en tiempo real de los datos que se están alimentando al sistema y es útil para operaciones sensibles al tiempo que usan métricas de alta velocidad
 ---
