@@ -41,9 +41,9 @@ Además de las tres _V originales_, se han descrito algunas cualidades adiciones
 
 - **Veracidad**: la variedad de fuentes y la complejidad del procesamiento pueden generar desafíos para evaluar la validéz de los datos.
 
-- **Variabilidad**: es posible que se necesiten recursos adicionales para identificar, procesar o filtrar datos de baja calidad para hacerlo más útil.
+- **Variabilidad**: es posible que se necesiten recursos adicionales para identificar, procesar o filtrar datos de baja calidad.
 
-- **Valor**: los sistemas y procesos establecidos son lo suficientemente complejos como para que el uso de los datos y la extracción del valor real se vuelvan difíciles.
+- **Valor**: los sistemas establecidos son pueden ser complejos como para que el uso de los datos y la extracción del valor real se vuelvan difíciles.
 
 ---
 
@@ -55,13 +55,18 @@ Las categorías generales para el procesamiento de Big Data son:
  4. Visualización de resultados 
 
 ---
-### Clustered Computing (_Primero revisaremos esto_)
+### Clustered Computing (1/2)
 
-Para poder cumplir con los requerimientos y exigencias de un sistema de Big Data, es necesario tener presente que una sola máquina física no es capáz de cumplir con la demanda requerida, es por ello que las herramientas usadas para el tratamiento de datos a niveles masivos, estan pensadas en el uso distribuido de los recursos. Algunos conceptos que debemos tener presentes en esta parte son:
+Para poder cumplir con los requerimientos y exigencias, es posible que una sola máquina no sea capáz de cumplir con la demanda, es por ello que las herramientas usadas para el tratamiento de datos estan pensadas para el uso distribuido de los recursos.
 
-- **Recopilación de recursos**: la combinación del espacio de almacenamiento, la CPU y la memoria es extremadamente importante. Procesar grandes conjuntos de datos requiere grandes cantidades de estos tres recursos.
-- **Alta disponibilidad**: los clústeres pueden proporcionar diversos niveles de tolerancia a errores y garantías de disponibilidad para evitar que las fallas de hardware o software afecten el acceso a los datos y el procesamiento. Esto se vuelve cada vez más importante a medida que continuamos enfatizando la importancia del análisis en tiempo real.
-- **Escalabilidad**: los clústeres facilitan la escala horizontal al agregar máquinas adicionales al grupo. Esto significa que el sistema puede reaccionar a los cambios en los requisitos de recursos sin expandir los recursos físicos en una máquina.
+---
+
+### Clustered Computing (2/2)
+Algunos conceptos que debemos tener presentes son:
+
+- **Distrubución de recursos**: la combinación de almacenamiento, CPU y memoria es extremadamente importante. Procesar grandes conjuntos de datos requiere grandes cantidades de recursos.
+- **Alta disponibilidad**: los clusters proporcionan niveles de tolerancia a errores y garantías de disponibilidad para evitar que las fallas de hardware o software.
+- **Escalabilidad**: los clusters facilitan la escalabilidad horizontal al agregar máquinas adicionales al grupo.
 
 ---
 ### Ingesta de datos
