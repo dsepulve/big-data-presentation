@@ -40,9 +40,7 @@ Los datos pueden ser subministrados desde diversas fuentes, tanto internos o ext
 Además de las tres _V originales_, se han descrito algunas cualidades adiciones:
 
 - **Veracidad**: la variedad de fuentes y la complejidad del procesamiento pueden generar desafíos para evaluar la validéz de los datos.
-
 - **Variabilidad**: es posible que se necesiten recursos adicionales para identificar, procesar o filtrar datos de baja calidad.
-
 - **Valor**: los sistemas establecidos son pueden ser complejos como para que el uso de los datos y la extracción del valor real se vuelvan difíciles.
 
 ---
@@ -72,7 +70,6 @@ Algunos conceptos que debemos tener presentes son:
 ### Ingesta de datos
 
 La ingesta es tomar datos sin procesar y agregarlos al sistema. La complejidad depende del formato y la calidad de las fuentes de datos.
-
 Tecnologías como **Apache Sqoop** pueden tomar datos de bases de datos relacionales y agregarlos a un sistema de big data. Del mismo modo, **Apache Flume** y **Apache Chukwa** son para agregar e importar registros de aplicaciones y servidores. Los sistemas de colas como **Apache Kafka** también se pueden usar como una interfaz entre varios generadores de datos y un sistema de big data. Durante el proceso de ingestión, se suele tener cierto nivel de análisis, clasificación y etiquetado. 
 
 ---
@@ -80,14 +77,12 @@ Tecnologías como **Apache Sqoop** pueden tomar datos de bases de datos relacion
 ### Persistencia de datos
 
 La ingestión entrega los datos a los componentes de almacenamiento. Si bien parece que sería una operación simple, el volumen de datos entrantes, los requisitos de disponibilidad y la capa de computación distribuida hacen que sea necesario contar con sistemas de almacenamiento más complejos.
-
 Esto generalmente significa un sistema de archivos distribuidos. Soluciones como el sistema de archivos HDFS de **Apache Hadoop** permiten que se graben grandes cantidades de datos en múltiples nodos del clúster. Esto garantiza que se pueda acceder a los datos mediante recursos de cómputo, que se puedan cargar en la RAM del clúster para operaciones en memoria, y que pueda manejar con elegancia los fallos de los componentes. Se pueden usar otros sistemas de archivos distribuidos en lugar de HDFS, incluidos Ceph y GlusterFS. Las bases de datos distribuidas son adecuadas para este rol porque se diseñan con las mismas consideraciones de tolerancia a errores.
 
 ---
 
 ### Análisis de Datos (1/2)
 Teniendo los datos disponibles, el sistema puede comenzar a procesarlos. La capa de cálculo es quizás la parte más diversa del sistema, ya que los requisitos y el mejor enfoque pueden variar significativamente según el tipo de conocimiento que se desee. A menudo, los datos se procesan de manera repetida, ya sea iterativamente con una sola herramienta o mediante el uso de varias herramientas para mostrar diferentes tipos de información.
-
 El **procesamiento por lotes** (batch) implica dividir el trabajo en partes más pequeñas, programar cada pieza en una máquina individual, reorganizar los datos en función de los resultados intermedios y luego, calcular y ensamblar el resultado final. Estos pasos a menudo se denominan individualmente como división, mapeo, mezcla, reducción y ensamblaje, o colectivamente como un algoritmo de reducción de mapas distribuidos.
 
 ---
@@ -95,7 +90,6 @@ El **procesamiento por lotes** (batch) implica dividir el trabajo en partes más
 ### Análisis de Datos (2/2)
 
 Si bien el procesamiento por lotes es una buena opción para ciertos tipos de datos y cálculos, otras cargas de trabajo requieren más procesamiento en tiempo real. El procesamiento en tiempo real exige que la información se procese y prepare inmediatamente y requiere que el sistema reaccione a medida que se disponga de nueva información. Una forma de lograr esto es el procesamiento continuo, que opera en un flujo continuo de datos compuesto por elementos individuales. Otra característica común de los procesadores en tiempo real es la computación en memoria, que funciona con representaciones de los datos en la memoria del clúster para evitar tener que volver a escribir en el disco.
-
 Apache Storm, Apache Flink y Apache Spark proporcionan diferentes formas de lograr un procesamiento en tiempo real o casi en tiempo real. Hay intercambios con cada una de estas tecnologías, que pueden afectar qué enfoque es el mejor para cada problema individual. En general, el procesamiento en tiempo real es el más adecuado para analizar trozos más pequeños de datos que están cambiando o se están agregando al sistema rápidamente.
 
 ---
@@ -103,22 +97,13 @@ Apache Storm, Apache Flink y Apache Spark proporcionan diferentes formas de logr
 ### Visualizando los Resultados
 
 Debido al tipo de información que se procesa, reconocer las tendencias de los datos a lo largo del tiempo es más importante que los valores mismos. La visualización de datos es una de las formas más útiles de detectar tendencias y dar sentido a una gran cantidad de puntos de datos.
-
 El procesamiento en tiempo real se utiliza para visualizar las métricas de aplicaciones y servidores. Los datos cambian con frecuencia y los grandes deltas en las métricas generalmente indican impactos significativos en la salud de los sistemas u organizaciones. En estos casos, proyectos como Prometheus pueden ser útiles para procesar las secuencias de datos como una base de datos de series de tiempo y visualizar esa información.
-
 Una forma popular de visualizar datos es con Elastic Stack, anteriormente conocida como la pila ELK. Compuesto por Logstash para la recopilación de datos, Elasticsearch para indexar los datos y Kibana para la visualización, la pila Elastic se puede usar con los sistemas de big data para interactuar visualmente con los resultados de los cálculos o métricas sin formato. Se puede lograr una pila similar usando Apache Solr para indexar y una horquilla Kibana llamada Banana para visualización. La pila creada por estos se llama Seda.
-
 Otra tecnología de visualización típicamente utilizada para el trabajo interactivo de ciencia de datos es un "cuaderno de datos". Estos proyectos permiten la exploración y visualización interactiva de los datos en un formato propicio para compartir, presentar o colaborar. Ejemplos populares de este tipo de interfaz de visualización son Jupyter Notebook y Apache Zeppelin.
 
 ---
 
 ## Anexo
-
----
-
-### Glosario
-
-- **Big Data**: Big Data es un término general para conjuntos de datos que las computadoras o herramientas tradicionales no pueden manejar razonablemente debido a su volumen, velocidad y variedad. Este término también se aplica típicamente a las tecnologías y estrategias para trabajar con este tipo de datos.
 
 ---
 ### Glosario
