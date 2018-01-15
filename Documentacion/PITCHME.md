@@ -71,42 +71,40 @@ Algunos conceptos que debemos tener presentes son:
 ---
 ### Ingesta de datos
 
-La ingesta de datos es el proceso de tomar datos sin procesar y agregarlos al sistema. La complejidad de esta operación depende en gran medida del formato y la calidad de las fuentes de datos y de cuán lejos están los datos del estado deseado antes del procesamiento.
+La ingesta es tomar datos sin procesar y agregarlos al sistema. La complejidad depende del formato y la calidad de las fuentes de datos.
 
-Tecnologías como **Apache Sqoop** pueden tomar datos existentes de bases de datos relacionales y agregarlos a un sistema de big data. Del mismo modo, **Apache Flume** y **Apache Chukwa** son proyectos diseñados para agregar e importar registros de aplicaciones y servidores. Los sistemas de colas como **Apache Kafka** también se pueden usar como una interfaz entre varios generadores de datos y un sistema de big data. Los frameworks de ingesta como Gobblin pueden ayudar a agregar y normalizar el rendimiento de estas herramientas al final del pipeline de ingestión.
-
-Durante el proceso de ingestión, suele tener lugar cierto nivel de análisis, clasificación y etiquetado. Este proceso a veces se llama **ETL**, que significa extraer, transformar y cargar. Si bien este término se refiere convencionalmente a los procesos de almacenamiento de datos heredados, algunos de los mismos conceptos se aplican a los datos que ingresan al sistema Big Data. Las operaciones típicas pueden incluir la modificación de los datos entrantes para formatearlo, categorizar y etiquetar los datos, filtrar los datos innecesarios o incorrectos, o potencialmente validar que se adhiere a ciertos requisitos.
+Tecnologías como **Apache Sqoop** pueden tomar datos de bases de datos relacionales y agregarlos a un sistema de big data. Del mismo modo, **Apache Flume** y **Apache Chukwa** son para agregar e importar registros de aplicaciones y servidores. Los sistemas de colas como **Apache Kafka** también se pueden usar como una interfaz entre varios generadores de datos y un sistema de big data. Durante el proceso de ingestión, se suele tener cierto nivel de análisis, clasificación y etiquetado. 
 
 ---
 
 ### Persistencia de datos
 
-Los procesos de ingestión normalmente entregan los datos a los componentes que administran el almacenamiento, de modo que se pueden conservar de manera confiable en el disco. Si bien parece que sería una operación simple, el volumen de datos entrantes, los requisitos de disponibilidad y la capa de computación distribuida hacen que sea necesario contar con sistemas de almacenamiento más complejos.
+La ingestión entrega los datos a los componentes de almacenamiento. Si bien parece que sería una operación simple, el volumen de datos entrantes, los requisitos de disponibilidad y la capa de computación distribuida hacen que sea necesario contar con sistemas de almacenamiento más complejos.
 
-Esto generalmente significa aprovechar un sistema de archivos distribuidos para el almacenamiento de datos en bruto. Las soluciones como el sistema de archivos HDFS de **Apache Hadoop** permiten que se graben grandes cantidades de datos en múltiples nodos del clúster. Esto garantiza que se pueda acceder a los datos mediante recursos de cómputo, que se puedan cargar en la RAM del clúster para operaciones en memoria, y que pueda manejar con elegancia los fallos de los componentes. Se pueden usar otros sistemas de archivos distribuidos en lugar de HDFS, incluidos Ceph y GlusterFS.
-
-Los datos también se pueden importar a otros sistemas distribuidos para un acceso más estructurado. Las bases de datos distribuidas, especialmente las bases de datos NoSQL, son adecuadas para este rol porque a menudo se diseñan con las mismas consideraciones de tolerancia a errores y pueden manejar datos heterogéneos. Hay muchos tipos diferentes de bases de datos distribuidas para elegir, dependiendo de cómo quiera organizar y presentar los datos. Para obtener más información sobre algunas de las opciones y para qué propósito sirven mejor, lea nuestra guía de comparación NoSQL.
+Esto generalmente significa un sistema de archivos distribuidos. Soluciones como el sistema de archivos HDFS de **Apache Hadoop** permiten que se graben grandes cantidades de datos en múltiples nodos del clúster. Esto garantiza que se pueda acceder a los datos mediante recursos de cómputo, que se puedan cargar en la RAM del clúster para operaciones en memoria, y que pueda manejar con elegancia los fallos de los componentes. Se pueden usar otros sistemas de archivos distribuidos en lugar de HDFS, incluidos Ceph y GlusterFS. Las bases de datos distribuidas son adecuadas para este rol porque se diseñan con las mismas consideraciones de tolerancia a errores.
 
 ---
 
-### Análisis de Datos
-Una vez que los datos están disponibles, el sistema puede comenzar a procesar los datos para conocer la información real. La capa de cálculo es quizás la parte más diversa del sistema, ya que los requisitos y el mejor enfoque pueden variar significativamente según el tipo de conocimiento que se desee. A menudo, los datos se procesan de manera repetida, ya sea iterativamente con una sola herramienta o mediante el uso de varias herramientas para mostrar diferentes tipos de información.
+### Análisis de Datos (1/2)
+Teniendo los datos disponibles, el sistema puede comenzar a procesarlos. La capa de cálculo es quizás la parte más diversa del sistema, ya que los requisitos y el mejor enfoque pueden variar significativamente según el tipo de conocimiento que se desee. A menudo, los datos se procesan de manera repetida, ya sea iterativamente con una sola herramienta o mediante el uso de varias herramientas para mostrar diferentes tipos de información.
 
-El procesamiento por lotes es un método de computación en un gran conjunto de datos. El proceso implica dividir el trabajo en partes más pequeñas, programar cada pieza en una máquina individual, reorganizar los datos en función de los resultados intermedios y luego calcular y ensamblar el resultado final. Estos pasos a menudo se denominan individualmente como división, mapeo, mezcla, reducción y ensamblaje, o colectivamente como un algoritmo de reducción de mapas distribuidos. Esta es la estrategia utilizada por MapReduce de Apache Hadoop. El procesamiento por lotes es más útil cuando se trata de conjuntos de datos muy grandes que requieren un poco de computación.
+El **procesamiento por lotes** (batch) implica dividir el trabajo en partes más pequeñas, programar cada pieza en una máquina individual, reorganizar los datos en función de los resultados intermedios y luego, calcular y ensamblar el resultado final. Estos pasos a menudo se denominan individualmente como división, mapeo, mezcla, reducción y ensamblaje, o colectivamente como un algoritmo de reducción de mapas distribuidos.
+
+---
+
+### Análisis de Datos (2/2)
 
 Si bien el procesamiento por lotes es una buena opción para ciertos tipos de datos y cálculos, otras cargas de trabajo requieren más procesamiento en tiempo real. El procesamiento en tiempo real exige que la información se procese y prepare inmediatamente y requiere que el sistema reaccione a medida que se disponga de nueva información. Una forma de lograr esto es el procesamiento continuo, que opera en un flujo continuo de datos compuesto por elementos individuales. Otra característica común de los procesadores en tiempo real es la computación en memoria, que funciona con representaciones de los datos en la memoria del clúster para evitar tener que volver a escribir en el disco.
 
 Apache Storm, Apache Flink y Apache Spark proporcionan diferentes formas de lograr un procesamiento en tiempo real o casi en tiempo real. Hay intercambios con cada una de estas tecnologías, que pueden afectar qué enfoque es el mejor para cada problema individual. En general, el procesamiento en tiempo real es el más adecuado para analizar trozos más pequeños de datos que están cambiando o se están agregando al sistema rápidamente.
 
-Los ejemplos anteriores representan marcos computacionales. Sin embargo, hay muchas otras maneras de computar o analizar datos dentro de un sistema de big data. Estas herramientas con frecuencia se conectan a los marcos anteriores y proporcionan interfaces adicionales para interactuar con las capas subyacentes. Por ejemplo, Apache Hive proporciona una interfaz de depósito de datos para Hadoop, Apache Pig proporciona una interfaz de consulta de alto nivel, mientras que las interacciones similares a SQL con datos se pueden lograr con proyectos como Apache Drill, Apache Impala, Apache Spark SQL y Presto. Para el aprendizaje automático, proyectos como Apache SystemML, Apache Mahout y Apache Spark's MLlib pueden ser útiles. Para la programación de análisis directo que tiene un amplio soporte en el ecosistema de big data, tanto R como Python son opciones populares.
-
 ---
 
 ### Visualizando los Resultados
 
-Debido al tipo de información que se procesa en los sistemas de big data, reconocer las tendencias o los cambios en los datos a lo largo del tiempo a menudo es más importante que los valores mismos. La visualización de datos es una de las formas más útiles de detectar tendencias y dar sentido a una gran cantidad de puntos de datos.
+Debido al tipo de información que se procesa, reconocer las tendencias de los datos a lo largo del tiempo es más importante que los valores mismos. La visualización de datos es una de las formas más útiles de detectar tendencias y dar sentido a una gran cantidad de puntos de datos.
 
-El procesamiento en tiempo real se utiliza con frecuencia para visualizar las métricas de aplicaciones y servidores. Los datos cambian con frecuencia y los grandes deltas en las métricas generalmente indican impactos significativos en la salud de los sistemas u organizaciones. En estos casos, proyectos como Prometheus pueden ser útiles para procesar las secuencias de datos como una base de datos de series de tiempo y visualizar esa información.
+El procesamiento en tiempo real se utiliza para visualizar las métricas de aplicaciones y servidores. Los datos cambian con frecuencia y los grandes deltas en las métricas generalmente indican impactos significativos en la salud de los sistemas u organizaciones. En estos casos, proyectos como Prometheus pueden ser útiles para procesar las secuencias de datos como una base de datos de series de tiempo y visualizar esa información.
 
 Una forma popular de visualizar datos es con Elastic Stack, anteriormente conocida como la pila ELK. Compuesto por Logstash para la recopilación de datos, Elasticsearch para indexar los datos y Kibana para la visualización, la pila Elastic se puede usar con los sistemas de big data para interactuar visualmente con los resultados de los cálculos o métricas sin formato. Se puede lograr una pila similar usando Apache Solr para indexar y una horquilla Kibana llamada Banana para visualización. La pila creada por estos se llama Seda.
 
