@@ -11,7 +11,7 @@ El término de Big Data en general, se usa para las estrategias y tecnologías n
 # ¿Qué es el Big Data?
 Formalmente no hay una definición de Big Data que pueda describir con exactitud todo lo que engloba, pero si podemos mencionar ciertas característias que son comunes en un sistema de Big Data que podrían ayudar a definirlo:
 
-_" En este contexto, "gran conjunto de datos" significa un conjunto de datos demasiado grande para procesar o almacenar razonablemente con herramientas tradicionales o en una sola máquina (servidor). Esto significa que la escala común de grandes conjuntos de datos cambia constantemente y puede variar significativamente de una organización a otra."_
+_"El Big Data significa que un conjunto de datos es muy grande para procesarse o almacenarse razonablemente con herramientas tradicionales o en una sola máquina."_
 
 ---
 
@@ -22,8 +22,7 @@ En 2001, Doug Laney de Gartner presentó lo que se conoce como las _"tres V de B
 ---
 
 ## Volumen
-La gran escala de la información procesada ayuda a definir los sistemas de big data. Estos conjuntos de datos pueden ser órdenes de magnitud mayores que los conjuntos de datos tradicionales, lo que exige más reflexión en cada etapa del ciclo de vida de procesamiento y almacenamiento.
-
+Estos conjuntos de datos pueden estar en órdenes de magnitud mayores que los conjuntos de datos tradicionales, lo que exige más reflexión en cada etapa del ciclo de vida de procesamiento y almacenamiento.
 A menudo, debido a que los requisitos de trabajo superan las capacidades de una sola máquina, esto se convierte en un desafío para agrupar, asignar y coordinar recursos de grupos de máquinas. La gestión de clusters y los algoritmos capaces de dividir las tareas en piezas más pequeñas cobran cada vez más importancia.
 
 ---
