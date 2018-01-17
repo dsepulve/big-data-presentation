@@ -2,7 +2,7 @@
 ## Introducción al Big Data
 **Diego Sepúlveda**
 Note:
-https://gitpitch.com/dsepulve/big-data-presentation/master?grs=github&t=moon&p=Documentacion#/
+https://gitpitch.com/dsepulve/big-data-presentation/style
 
 
 ---
@@ -99,14 +99,13 @@ La capa de cálculo es quizás la parte más diversa del sistema, ya que los req
 
 El procesamiento en tiempo real (online) exige que la información se procese y prepare inmediatamente. Además requiere que el sistema reaccione a medida que se disponga de nueva información. Una forma de lograr esto es el procesamiento continuo es con un flujo constante de datos. Otra característica común de los procesos online es la **In-Memory Computing**, que funciona con representaciones de los datos en la memoria del cluster para evitar tener que volver a escribir en el disco.
 **Apache Storm, Apache Flink y Apache Spark** proporcionan diferentes formas de lograr un procesamiento en tiempo real o casi en tiempo real.
+
 ---
 
 ## Visualizando los Resultados
 
 Reconocer las tendencias de los datos es más importante que los valores mismos. La visualización de datos es una de las formas más útiles de detectar tendencias y dar sentido a una gran cantidad de puntos de datos.
-El procesamiento en tiempo real se utiliza para visualizar las métricas de aplicaciones y servidores. Los datos cambian con frecuencia y los grandes deltas en las métricas generalmente indican impactos significativos en la salud de los sistemas u organizaciones. En estos casos, proyectos como Prometheus pueden ser útiles para procesar las secuencias de datos como una base de datos de series de tiempo y visualizar esa información.
-Una forma popular de visualizar datos es con Elastic Stack, anteriormente conocida como la pila ELK. Compuesto por Logstash para la recopilación de datos, Elasticsearch para indexar los datos y Kibana para la visualización, la pila Elastic se puede usar con los sistemas de big data para interactuar visualmente con los resultados de los cálculos o métricas sin formato. Se puede lograr una pila similar usando Apache Solr para indexar y una horquilla Kibana llamada Banana para visualización. La pila creada por estos se llama Seda.
-Otra tecnología de visualización típicamente utilizada para el trabajo interactivo de ciencia de datos es un "cuaderno de datos". Estos proyectos permiten la exploración y visualización interactiva de los datos en un formato propicio para compartir, presentar o colaborar. Ejemplos populares de este tipo de interfaz de visualización son Jupyter Notebook y Apache Zeppelin.
+El procesamiento en tiempo real se utiliza para visualizar las métricas de aplicaciones y servidores. Los datos cambian con frecuencia y los grandes deltas en las métricas indican impactos significativos en la salud de las organizaciones. Proyectos como Prometheus son útiles para procesar las secuencias de datos y visualizar esa información. Otra alternativa es con Elastic Stack. Compuesto por **Logstash** para la recopilación de datos, **Elasticsearch** para indexar los datos y **Kibana** para la visualización. 
 
 ---
 
