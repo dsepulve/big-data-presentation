@@ -47,7 +47,11 @@
   color: antiquewhite;
 }
 
-  .reveal p{
+.reveal h1 h2 h3 h4{
+  font-size: 80%;
+  color: antiquewhite;
+}
+.reveal p{
     font-size: 80%;
     color: antiquewhite;
   }
