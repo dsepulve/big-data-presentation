@@ -1,6 +1,6 @@
 
-## Introducción al Big Data
-**Diego Sepúlveda**
+# Taller de Introducción al Big Data
+## Diego Sepúlveda
 Note:
 https://gitpitch.com/dsepulve/big-data-presentation/style
 
