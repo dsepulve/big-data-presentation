@@ -43,20 +43,24 @@
     border-radius: 15px;
   }
 
+.reveal{
+  color: antiquewhite;
+}
+
   .reveal p{
-    font-size: 70%;
+    font-size: 80%;
   }
 
   .reveal li{
-    font-size: 70%;
+    font-size: 80%;
   }
   
   .reveal ul{
-    font-size: 70%;
+    font-size: 80%;
   }
 
   .reveal ol{
-    font-size: 70%;
+    font-size: 80%;
   }
 
   #gp-logo img {
