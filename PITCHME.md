@@ -120,7 +120,7 @@ El procesamiento por lotes es una estrategia digital que implica procesar datos 
 Data lake es un término para un gran repositorio de datos recopilados en un estado relativamente crudo. Esto se usa con frecuencia para referirse a los datos recopilados en un sistema de big data que podría no estar estructurado y cambiar con frecuencia. Esto difiere en espíritu de los almacenes de datos (Data Warehouse).
 
 ---
-## Data Mining*
+## Data Mining
 La minería de datos es un término amplio para la práctica de tratar de encontrar patrones en grandes conjuntos de datos. Es el proceso de tratar de refinar una gran cantidad de datos en un conjunto de información más comprensible y coherente.
 
 ---
