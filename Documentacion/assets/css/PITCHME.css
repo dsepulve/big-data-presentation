@@ -3,6 +3,11 @@
     color: chartreuse;
 }
 
+p {
+    font-size: 70%;
+    color: chartreuse;
+}
+
 .reveal ul {
     font-size: 70%;
 }
