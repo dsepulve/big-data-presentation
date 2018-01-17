@@ -43,7 +43,23 @@
     opacity: 0.75 !important;
     border-radius: 15px;
   }
+
+  .reveal p{
+    font-size: 70%;
+  }
+
+  .reveal li{
+    font-size: 70%;
+  }
   
+  .reveal li{
+    font-size: 70%;
+  }
+
+  .reveal ol{
+    font-size: 70%;
+  }
+
   #gp-logo img {
     max-height: 2em;
     max-width: none;
