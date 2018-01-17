@@ -1,5 +1,5 @@
 
-@title[Introducción al BigData]
+##Introducción al Big Data
 **Diego Sepúlveda**
 Note:
 https://gitpitch.com/dsepulve/big-data-presentation/master?grs=github&t=moon&p=Documentacion#/
@@ -7,7 +7,7 @@ https://gitpitch.com/dsepulve/big-data-presentation/master?grs=github&t=moon&p=D
 
 ---
 
-@title[ Motivación ]
+### Motivación
 
 El término de Big Data en general, se usa para las estrategias y tecnologías no tradicionales necesarias para recopilar, organizar, procesar y recopilar información de grandes volúmenes de datos. Si bien el problema de trabajar con datos que exceden la capacidad de computación o el almacenamiento de una sola máquina no es nuevo, la penetración, la escala y el valor de este tipo de informática se han expandido enormemente en los últimos años.
 
@@ -153,4 +153,3 @@ Otra tecnología de visualización típicamente utilizada para el trabajo intera
 ---
 ### Glosario
 - **Stream Processing**: El procesamiento de flujo es la práctica de computar sobre elementos de datos individuales a medida que se mueven a través de un sistema. Esto permite el análisis en tiempo real de los datos que se están alimentando al sistema y es útil para operaciones sensibles al tiempo que usan métricas de alta velocidad
----
