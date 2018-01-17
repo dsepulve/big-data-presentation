@@ -91,20 +91,19 @@ Esto implica un sistema de archivos distribuidos. Soluciones como el sistema de 
 ---
 
 ## Análisis de Datos (1/2)
-Teniendo los datos disponibles, el sistema puede comenzar a procesarlos. La capa de cálculo es quizás la parte más diversa del sistema, ya que los requisitos y el enfoque pueden variar significativamente según el tipo de conocimiento que se desee. A menudo, los datos se procesan de manera repetida, ya sea iterativamente con una sola herramienta o mediante el uso de varias herramientas para mostrar diferentes tipos de información.
-El **procesamiento por lotes** (batch) implica dividir el trabajo, programar cada pieza en una máquina individual, reorganizar los datos en función de los resultados intermedios y luego, calcular y ensamblar el resultado final. Estos pasos a menudo se denominan individualmente como división, mapeo, mezcla, reducción y ensamblaje, o colectivamente como un algoritmo de reducción de mapas distribuidos.
+La capa de cálculo es quizás la parte más diversa del sistema, ya que los requisitos y el enfoque pueden variar significativamente según el tipo de conocimiento que se desee. Es comun procesar los datos de manera repetida, ya sea iterativamente con una sola herramienta o con varias para mostrar diferentes tipos de información. El **procesamiento por lotes** (batch) implica realizar procesos conocidos como división, mapeo, mezcla, reducción y ensamblaje.
 
 ---
 
 ## Análisis de Datos (2/2)
 
-Si bien el procesamiento por lotes es una buena opción para ciertos tipos de datos y cálculos, otras cargas de trabajo requieren más procesamiento en tiempo real. El procesamiento en tiempo real exige que la información se procese y prepare inmediatamente. Además requiere que el sistema reaccione a medida que se disponga de nueva información. Una forma de lograr esto es el procesamiento continuo (online), que opera en un flujo continuo de datos compuesto por elementos individuales. Otra característica común de los procesadores en tiempo real es la computación en memoria, que funciona con representaciones de los datos en la memoria del cluster para evitar tener que volver a escribir en el disco.
+El procesamiento en tiempo real (online) exige que la información se procese y prepare inmediatamente. Además requiere que el sistema reaccione a medida que se disponga de nueva información. Una forma de lograr esto es el procesamiento continuo es con un flujo constante de datos. Otra característica común de los procesos online es la **In-Memory Computing**, que funciona con representaciones de los datos en la memoria del cluster para evitar tener que volver a escribir en el disco.
 **Apache Storm, Apache Flink y Apache Spark** proporcionan diferentes formas de lograr un procesamiento en tiempo real o casi en tiempo real.
 ---
 
 ## Visualizando los Resultados
 
-Debido al tipo de información que se procesa, reconocer las tendencias de los datos es más importante que los valores mismos. La visualización de datos es una de las formas más útiles de detectar tendencias y dar sentido a una gran cantidad de puntos de datos.
+Reconocer las tendencias de los datos es más importante que los valores mismos. La visualización de datos es una de las formas más útiles de detectar tendencias y dar sentido a una gran cantidad de puntos de datos.
 El procesamiento en tiempo real se utiliza para visualizar las métricas de aplicaciones y servidores. Los datos cambian con frecuencia y los grandes deltas en las métricas generalmente indican impactos significativos en la salud de los sistemas u organizaciones. En estos casos, proyectos como Prometheus pueden ser útiles para procesar las secuencias de datos como una base de datos de series de tiempo y visualizar esa información.
 Una forma popular de visualizar datos es con Elastic Stack, anteriormente conocida como la pila ELK. Compuesto por Logstash para la recopilación de datos, Elasticsearch para indexar los datos y Kibana para la visualización, la pila Elastic se puede usar con los sistemas de big data para interactuar visualmente con los resultados de los cálculos o métricas sin formato. Se puede lograr una pila similar usando Apache Solr para indexar y una horquilla Kibana llamada Banana para visualización. La pila creada por estos se llama Seda.
 Otra tecnología de visualización típicamente utilizada para el trabajo interactivo de ciencia de datos es un "cuaderno de datos". Estos proyectos permiten la exploración y visualización interactiva de los datos en un formato propicio para compartir, presentar o colaborar. Ejemplos populares de este tipo de interfaz de visualización son Jupyter Notebook y Apache Zeppelin.
