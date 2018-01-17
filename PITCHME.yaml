@@ -1,4 +1,4 @@
-theme : night
+#theme : night
 theme-override : assets/css/PITCHME.css
 footnote : "ThoughtWorks, 2018"
 slide-number : true
