@@ -1,8 +1,13 @@
-## Introducción al BigData
+
+@title[Introducción al BigData]
 **Diego Sepúlveda**
+Note:
+https://gitpitch.com/dsepulve/big-data-presentation/master?grs=github&t=moon&p=Documentacion#/
+
+
 ---
 
-### Motivación
+@title[ Motivación ]
 
 El término de Big Data en general, se usa para las estrategias y tecnologías no tradicionales necesarias para recopilar, organizar, procesar y recopilar información de grandes volúmenes de datos. Si bien el problema de trabajar con datos que exceden la capacidad de computación o el almacenamiento de una sola máquina no es nuevo, la penetración, la escala y el valor de este tipo de informática se han expandido enormemente en los últimos años.
 
@@ -76,7 +81,7 @@ Tecnologías como **Apache Sqoop** pueden tomar datos de bases de datos relacion
 
 ### Persistencia de datos
 
-La ingestión entrega los datos a los componentes de almacenamiento. Si bien parece que sería una operación simple, el volumen de datos entrantes, los requisitos de disponibilidad y la capa de computación distribuida hacen que sea necesario contar con sistemas de almacenamiento más complejos.
+La ingestión entrega los datos a los componentes de almacenamiento. Si bien parecería simple, el volumen entrante, la disponibilidad y la capa de computación distribuida hacen que sea necesario contar con sistemas de almacenamiento más complejos.
 Esto generalmente significa un sistema de archivos distribuidos. Soluciones como el sistema de archivos HDFS de **Apache Hadoop** permiten que se graben grandes cantidades de datos en múltiples nodos del clúster. Esto garantiza que se pueda acceder a los datos mediante recursos de cómputo, que se puedan cargar en la RAM del clúster para operaciones en memoria, y que pueda manejar con elegancia los fallos de los componentes. Se pueden usar otros sistemas de archivos distribuidos en lugar de HDFS, incluidos Ceph y GlusterFS. Las bases de datos distribuidas son adecuadas para este rol porque se diseñan con las mismas consideraciones de tolerancia a errores.
 
 ---
