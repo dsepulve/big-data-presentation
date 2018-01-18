@@ -26,11 +26,13 @@
 2. Ver las tablas cargadas
 3. Ejecutar
 
+```
 SELECT movie_id, count(movie_id) as ratingCount
 FROM ratings
 GROUP BY movie_id
 ORDER BY ratingCount
 DESC
+```
 
 4. Chequear resultados
 5. Chequear graph
